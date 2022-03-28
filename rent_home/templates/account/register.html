@@ -1,0 +1,13 @@
+{% extends 'form_base.html' %}
+
+{% block title %}Register{% endblock title %}
+
+{% block form_title %}Reegister{% endblock form_title %}
+
+{% block form %}
+<form class="form-control p-3" method='POST'>
+    {% csrf_token %}
+    {{form}}
+    <button class="form-control btn btn-success">Sign up</button>
+</form>
+{% endblock form %}

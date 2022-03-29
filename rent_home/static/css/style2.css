@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  direction: ltr;
+  width: 100%;
+  font-size: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #909497;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+a:hover {
+  color: #3b3b3b;
+}
+
+nav {
+  padding: 10px 0;
+  font-size: 20px;
+}
+
+.logo {
+  font-weight: bold;
+}
+
+.lm {
+  margin: auto 20px;
+}
+
+.house-cards {
+  margin-top: 10rem;
+}
+
+.hc-card {
+  width: 30%;
+  background-color: #f4f6f7;
+  border-radius: 10px;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.hc-card:hover {
+  -webkit-box-shadow: 0px 9px 20px -6px #b3b6b7;
+          box-shadow: 0px 9px 20px -6px #b3b6b7;
+  -webkit-transform: translate(0, -3px);
+          transform: translate(0, -3px);
+}
+
+.hc-card .hcc-content {
+  position: relative;
+}
+
+.hc-card .hcc-content .hcc-img {
+  width: 100%;
+  position: relative;
+  border-radius: 10px 10px 0 0;
+}
+
+.hc-card .hcc-content .hcc-price {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  border-radius: 20px;
+  background-color: #fff;
+  padding: 10px 30px;
+}
+
+.filter {
+  width: 100%;
+  height: 100px;
+  border-radius: 10px;
+}
+
+.filter #expand {
+  cursor: pointer;
+}
+
+footer {
+  margin-top: 10rem;
+  background-color: #1f618d;
+  border-radius: 20px 20px 0 0;
+  position: relative;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  background-color: #2980b9;
+  z-index: -1;
+  height: 100%;
+  top: -40px;
+  left: 0;
+  border-radius: 20px 20px 0 0;
+}
+
+footer h1 {
+  margin: auto 0;
+  text-align: center;
+}
+
+.info {
+  width: 30%;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.detail {
+  width: 60%;
+}
+
+.detail img {
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.urinfo {
+  width: 30%;
+}
+
+.bg-chat {
+  background-color: #f4f6f7;
+  height: 75px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.chat-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.cards {
+  width: 70%;
+}
+
+.add-new {
+  height: 60px;
+  border-radius: 10px;
+  background-color: #3498db;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 20px;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.add-new:hover {
+  background-color: #2e86c1;
+}
+
+.no-item {
+  margin: 0 auto;
+}
+/*# sourceMappingURL=style2.css.map */

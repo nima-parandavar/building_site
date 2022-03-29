@@ -1,8 +1,8 @@
 {% extends 'form_base.html' %}
 
-{% block title %}Register{% endblock title %}
+{% block title %}Login{% endblock title %}
 
-{% block form_title %}Reegister{% endblock form_title %}
+{% block form_title %}Login{% endblock form_title %}
 
 {% block form %}
 {% if messages %}
@@ -13,6 +13,7 @@
 <form class="form-control p-3" method='POST'>
     {% csrf_token %}
     {{form}}
-    <button class="form-control btn btn-success">Sign up</button>
+    <p class="my-2">You don't have an account? <a href='{% url 'account:register' %}'>click here</a> to sign up</a>
+    <button class="form-control btn btn-success">Log in</button>
 </form>
 {% endblock form %}

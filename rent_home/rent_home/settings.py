@@ -138,3 +138,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Captcha
 SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
+
+# Log
+LOGOUT_URL = 'account:logout'
+LOGOUT_REDIRECT_URL = 'core:index'

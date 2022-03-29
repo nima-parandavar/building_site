@@ -1,1 +1,127 @@
-wellcome {{user.first_name}} :)
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock title %}
+
+{% block content %}
+<h1 class="my-5">Dashboard</h1>
+{% if messages %}
+    {% for message in messages %}
+        <p class="{{message.tags}}">{{message}}</p>
+    {% endfor %}
+{% endif %}
+<div class="d-flex flex-row justify-content-evenly align-items-start">
+    <div class="d-flex flex-column urinfo">
+        <div class="border info mb-3" style="width: 100%;">
+            <ul>
+                <li>
+                    <div>
+                        <h1 class="d-flex align-items-center">Your Info</h1>
+                    </div>
+                </li>
+                <li>
+                    <div class="text-muted">
+                        <p class="d-flex align-items-center">
+                            <span class="mx-2">First name:</span>
+                            <span class="text-dark mx-2">{{user.first_name}}</span>
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="text-muted">
+                        <p class="d-flex align-items-center">
+                            <span class="mx-2">Last name:</span>
+                            <span class="text-dark mx-2">{{user.last_name}}</span>
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="text-muted">
+                        <p class="d-flex align-items-center">
+                            <span class="mx-2">Email:</span>
+                            <span class="text-dark mx-2">{{user.email}}</span>
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="text-muted mb-2">
+                        <a href="{% url 'account:edit_info' %}" class="btn btn-warning" style="width: 100%;">Edit your info</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="text-muted mb-2">
+                        <a href="{% url 'account:change_password' %}" class="btn btn-primary" style="width: 100%;">Change your password</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="text-muted mb-2">
+                        <a href="#" class="btn btn-danger" style="width: 100%;">Delete your account</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- chats -->
+        <div class="border info" style="width: 100%;">
+            <ul>
+                <li>
+                    <div>
+                        <h1 class="d-flex align-items-center">Latest Messages</h1>
+                    </div>
+                </li>
+                <li class="my-3">
+                    <a href="#">
+                        <div class="d-flex flex-row align-items-center bg-chat">
+                            <img src="./static/media/christian-buehner-DItYlc26zVI-unsplash.jpg" alt="" class="chat-img">
+                            <p class="text-bold my-5 mx-2">John Runo</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="my-3">
+                    <a href="#">
+                        <div class="d-flex flex-row align-items-center bg-chat">
+                            <img src="./static/media/christian-buehner-DItYlc26zVI-unsplash.jpg" alt="" class="chat-img">
+                            <p class="text-bold my-5 mx-2">John Runo</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="my-3">
+                    <a href="#">
+                        <div class="d-flex flex-row align-items-center bg-chat">
+                            <img src="./static/media/christian-buehner-DItYlc26zVI-unsplash.jpg" alt="" class="chat-img">
+                            <p class="text-bold my-5 mx-2">John Runo</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="my-3">
+                    <a href="#" class="btn btn-link">
+                        All chats
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
+                            <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- cards -->
+    <div class="cards d-flex flex-column align-items-start mx-3">
+        <div>
+            <a href="#">
+                <div class="add-new text-light fs-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                    </svg>
+                    <span class="mx-1">Add new home</span>
+                </div>
+            </a>
+        </div>
+        <div style="width: 100%;">
+            <div class="d-flex justify-content-center align-items-center text-muted flex-column no-item text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                </svg>
+                <p class="fs-1">No Items added, click</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

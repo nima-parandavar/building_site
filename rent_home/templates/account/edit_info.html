@@ -1,0 +1,13 @@
+{% extends 'form_base.html' %}
+
+{% block title %}Edit Info{% endblock title %}
+
+{% block form_title %}Edit Info{% endblock form_title %}
+
+{% block form %}
+<form class="form-control p-3" method='POST'>
+    {% csrf_token %}
+    {{form}}
+    <button class="form-control btn btn-success">Edit</button>
+</form>
+{% endblock form %}

@@ -43,7 +43,7 @@ def the_buildings(request:HttpRequest):
                 building_type=cd['building_type'],
                 price__gt=cd['price']
             )
-            print(cards)
+            
             context = {'cards':cards, 'form':form}
             return render(request, 'building/the_buildings.html', context)
 

@@ -1,0 +1,16 @@
+{% extends 'form_base.html' %}
+
+{% block title %}Add New Building{% endblock title %}
+
+{% block form_title %}Add New Building{% endblock form_title %}
+
+{% block form %}
+<form class="form-control p-3" method='POST', enctype="multipart/form-data">
+    {% csrf_token %}
+    <h2 class='mb-3 text-muted'>Address</h2>
+    {{ad_form.as_p}}
+    <h2 class='my-3 text-muted'>Building Info</h2>
+    {{bu_form.as_p}}
+    <button class="form-control btn btn-success">Add The Building</button>
+</form>
+{% endblock form %}

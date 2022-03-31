@@ -9,7 +9,6 @@ from django.contrib.auth.models import User
 from .models import RealEstateAgency
 from django.core.exceptions import ObjectDoesNotExist
 
-
 # Create your views here.
 
 def register(request:HttpRequest):
@@ -110,9 +109,6 @@ def login_(request:HttpRequest):
     context = {'form': form}
     return render(request, 'account/login.html', context)
 
-@login_required
-def dashboard(request:HttpRequest):
-    return render(request, 'account/dashboard.html')
 
 @login_required
 def edit_info(request:HttpRequest):
@@ -135,8 +131,10 @@ def edit_info(request:HttpRequest):
     context = {'form':form}
     return render(request, 'account/edit_info.html', context)
 
+
 @login_required
 def change_password(request:HttpRequest):
+
     if request.method == 'POST':
         form = ChangePasswordForm(request.POST)
         if form.is_valid():
@@ -164,3 +162,10 @@ def change_password(request:HttpRequest):
         form = ChangePasswordForm()
     context = {'form': form}
     return render(request, 'account/change_password.html', context)
+
+
+@login_required
+def dashboard(request:HttpRequest):
+    the_buildings = request.user.the_buildings.filter(status=True).all()
+    context = {'the_buildings': the_buildings}
+    return render(request, 'account/dashboard.html', context)

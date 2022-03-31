@@ -31,7 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # costume registration
     'account.apps.AccountConfig',
+    # built in tools
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,7 +43,8 @@ INSTALLED_APPS = [
     # plugins
     'captcha',
     # apps
-    'core.apps.CoreConfig'
+    'core.apps.CoreConfig',
+    'building.apps.BuildingConfig',
 ]
 
 MIDDLEWARE = [
